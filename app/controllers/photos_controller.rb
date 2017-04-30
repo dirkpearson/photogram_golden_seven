@@ -2,9 +2,9 @@ class PhotosController <ApplicationController
   def show
     @photo = Photo.find(params[:id])
 
-    render("photos/show.html.erb")
+    render("/photos/show.html.erb")
   end
-  
+
   def destroy_row
     p = Photo.find(params[:id])
     p.destroy
@@ -13,7 +13,7 @@ class PhotosController <ApplicationController
   def edit_form
     @photo_edit = Photo.find(params[:id])
 
-    render('photos/edit_form.html.erb')
+    render('/photos/edit_form.html.erb')
   end
 
 
@@ -32,7 +32,7 @@ class PhotosController <ApplicationController
     p.caption= params[:caption]
     p.source = params[:source]
     p.save
-    redirect_to("/photos/:id")
+    redirect_to("/photos")
   end
 
   def new_form
