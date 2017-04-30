@@ -32,7 +32,7 @@ class PhotosController <ApplicationController
     p.caption= params[:caption]
     p.source = params[:source]
     p.save
-    redirect_to("/photos")
+    redirect_to("/photos/#{p.id}")
   end
 
   def new_form
